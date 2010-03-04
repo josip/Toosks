@@ -1,0 +1,43 @@
+<div id="tasks" class="page">
+  <div class="sidebar">
+    <ul>
+      <li id="project_inbox"><a href="#Tasks/p/inbox"><img src="images/icons/inbox.tiff"/><%= "inbox".loc() %></a></li>
+       <li><a href="#Tasks/today"><img src="images/icons/notebook.png"/><%= "today".loc().firstToUpperCase() %></a></li>
+      <li><a href="#Tasks/journal"><img src="images/icons/journal.tiff"/><%= "journal".loc() %></a></li>
+      <li><a href="#Tasks/createProject" class="action">+</a><a href="#Tasks/projects" class="section"><%= "projs".loc() %></a>
+        <ul id="projects"></ul>
+      </li>
+    </ul>
+  </div>
+  <div id="tasks_body" class="body">
+    <div id="project_actionbar" class="actionbar">
+      <ul>
+        <li class="first_in_group left" style="margin-left: 0 !important">
+          <a href="#Tasks/print"><%= "print".loc() %></a>
+        </li>
+        <li class="last_in_group left">
+          <a href="#Tasks/show_on_map"><%= "show on map".loc() %></a>
+        </li>
+        <!-- 
+        <li class="last_in_group right">
+          <a href="#Tasks/filter/finished"><%= "finished".loc() %></a>
+        </li>
+        <li class="first_in_group right">
+          <a href="#Tasks/filter/unfinished"><%= "unfinished".loc() %></a>
+        </li>
+        -->
+        <li class="right">
+          <a href="#Tasks/deleteAll"><%= "delete all".loc() %></a>
+        </li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+    <form class="update" action="#" method="post">
+      <textarea name="task_body" class="loc" title="<%= "next to do".loc() %>"></textarea>
+      <input type="submit" value="Create" style="display:none" />
+    </form>
+    <ul class="task_list">
+    </ul>
+  </div>
+  <hr class="clear"/>
+</div>

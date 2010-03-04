@@ -1,0 +1,77 @@
+<% var is_me = contact.id === "@me".loc(); %>
+<div id="contact_edit_bar" class="actionbar">
+  <ul>
+    <li class="first_in_group left">
+      <a href="#Contacts/edit/<%= contact.id %>"><%= "edit".loc() %></a>
+    </li>
+    <% if(contact.id === "create_me") { %>
+    <li class="last_in_group left">
+      <a href="#Contacts/cancel_create"><%= "cancel".loc() %></a>
+    </li>
+    <% } else { %>
+    <li class="last_in_group left <%= is_me ? "disabled" : "" %>">
+      <a href="#Contacts/del/<%= contact.id %>"><%= "delete".loc() %></a>
+    </li>
+
+    <li class="first_in_group">
+      <a href="#Contacts/send_mail_to/<%= contact.id %>"><%= "send mail".loc() %></a>
+    </li>
+    <li class="last_in_group">
+      <a href="#Contacts/show_on_map/<%= contact.id %>"><%= "show on map".loc() %></a>
+    </li>
+    
+    <li class="last_in_group right">
+      <a href="#Contacts/next"><img src="images/icons/next_contact.tiff"/></a>
+    </li>
+    <li class="first_in_group right">
+      <a href="#Contacts/prev"><img src="images/icons/prev_contact.tiff"/></a>
+    </li>
+    
+    <li class="alone right <%= contact.is_fave() ? "active" : "" %>" id="contact_toggle_fave" style="margin-right: 10px !important">
+      <a href="#Contacts/toggle_fave/<%= contact.id %>"><img src="images/fave.png" /></a>
+    </li>
+    <% } %>
+    <div class="clear"></div>
+  </ul>
+</div>
+<a href="#Contacts/change_photo/<%= contact.id %>" id="contact_photo_wrapper">
+  <span class="action"><%= contact.photo().split("/").last() %></span>
+  <img src="images/polaroid_frame.png" id="polaroid_frame"/>
+  <img src="<%= contact.photo() %>" id="contact_photo" class="contact_photo" />
+</a>
+<div id="contact_details">
+  <h2 class="editable" alt="full_name"><%= contact.attr("full_name") %></h2>
+  <h3>@</h3><h3 class="editable" alt="nick"><%= contact.id %></h3>
+  <fieldset>
+    <%= render_view("contacts/field", {
+      field: "email",
+      value: contact.attr("email") || "(none)".loc(),
+      is_property: true
+    }) %>
+    
+    <% var fields = contact.attr("fields").keys();
+      for(var n = 0, m = fields.length; n < m; n++) {
+        var field = fields[n]; %>
+    <%= render_view("contacts/field", {
+      field: field,
+      value: contact.field(field) || "(none)".loc(),
+      is_property: false
+    }) %>
+    <% } %>
+    
+    <% if(contact.id == "create_me") {%>
+    <p class="field" style="display:none">
+      <span class="editable field_val" alt="photo_path"></span>
+    </p>
+    <% } %>
+    
+    <p class="actions">
+      <a href="#Contacts/add_field" class="action" style="float:left;">
+        <img src="images/icons/plus.png" height="16" title="<%= "add".loc() %>"/>
+      </a>
+      <span class="editable field_name" id="new_field_name"><%= "(none)".loc() %></span>
+      <span class="editable field_val" id="new_field_value"><%= "(none)".loc() %></span>
+      <br class="clear"/>
+    </p>
+  </fieldset>
+</div>

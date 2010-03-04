@@ -1,0 +1,8 @@
+<li class="contact">
+  <a href="#Contacts/show/<%= contact.id %>">
+    <% if(contact.id === "@me".loc()) { %>
+      <span class="new">@<%= "@me".loc() %></span>
+    <% } %>
+    <img src="<%= contact.photo() %>" class="contact_photo"/><%= contact.attr("full_name") %>
+  </a>
+</li>

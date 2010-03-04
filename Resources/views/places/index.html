@@ -1,0 +1,42 @@
+<div id="places" class="page">
+  <div class="actionbar">
+    <ul>
+      <li class="alone left">
+        <a href="#Places/home"><img src="images/home.png" title="<%= "home".loc() %>"/></a>
+      </li>
+      
+      <li class="alone left">
+        <a href="#Places/add"><strong>+</strong></a>
+      </li>
+      
+      <li class="first_in_group left" id="search_maps_parent">
+        <a href="#"><input type="text" id="search_maps"/></a>
+      </li>
+      <li class="last_in_group left">
+        <a href="#Places/search"><%= "search".loc() %></a>
+      </li>
+      
+      <li class="first_in_group active map_type">
+        <a href="#Places/map_type/physical"><%= "physical [map]".loc() %></a>
+      </li>
+      <li class="map_type">
+        <a href="#Places/map_type/normal"><%= "maps [map]".loc() %></a>
+      </li>
+      <li class="last_in_group map_type">
+        <a href="#Places/map_type/hybrid"><%= "satellite [map]".loc() %></a>
+      </li>
+
+      <li class="alone right" id="map_zoom_slider_wrapper">
+        <img src="images/world.png" class="ui-slider-min-symbol" />
+        <img src="images/home_small.png" class="ui-slider-max-symbol" />
+        <div id="map_zoom_slider"></div>
+      </li>
+    </ul>
+    <div class="clear"></div>
+  </div>
+  <%= render_view("places/place_inspector") %>
+  <%= render_view("places/directions_inspector") %>
+  <div id="places_body" class="body">
+    <iframe id="map_iframe" frameborder="0" scrolling="no" src="<%= map_url %>" style="width:100%;height:100%"></iframe>
+  </div>
+</div>

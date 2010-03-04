@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Toosks</title>
+    <link rel="stylesheet" href="stylesheets/reset.css" type="text/css" />
+    <link rel="stylesheet" href="stylesheets/text.css" type="text/css" />
+    <link rel="stylesheet" href="stylesheets/main.css" type="text/css" />
+    <!--script src="external/firebug-lite.js"      type="text/javascript" charset="utf-8"></script-->
+    <script src="external/jquery-1.3.min.js"    type="text/javascript" charset="utf-8"></script>
+    <script src="external/jquery.livequery.js"  type="text/javascript" charset="utf-8"></script>
+    <script src="external/jquery.ui.js"         type="text/javascript" charset="utf-8"></script>
+    <script src="external/jquery.labelify.js"   type="text/javascript" charset="utf-8"></script>
+    <script src="external/jsclass_class.js"     type="text/javascript" charset="utf-8"></script>
+    <script src="external/json2.js"             type="text/javascript" charset="utf-8"></script>
+    <script src="otlet/otlet.js"                type="text/javascript" charset="utf-8"></script>
+    <script src="otlet/extensions.js"           type="text/javascript" charset="utf-8"></script>
+    <script src="otlet/language.js"             type="text/javascript" charset="utf-8"></script>
+    <script src="otlet/model.js"                type="text/javascript" charset="utf-8"></script>
+    <script src="otlet/sqlitestore.js"          type="text/javascript" charset="utf-8"></script>
+    <script src="otlet/view.js"                 type="text/javascript" charset="utf-8"></script>
+    <script src="otlet/controller.js"           type="text/javascript" charset="utf-8"></script>
+    <script src="otlet/router.js"               type="text/javascript" charset="utf-8"></script>
+    <script src="resource_loader.js"            type="text/javascript" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="navigation" unselectable="on">
+      <ul>
+        <li id="tasks_menu_item" class="first"><a href="#Tasks" class="loc">tasks</a></li>
+        <li id="contacts_menu_item"><a href="#Contacts" class="loc">contacts</a></li>
+        <li id="places_menu_item"><a href="#Places" class="loc">places</a></li>
+        <li id="trash_drop" class="last"><a href="#Trash" class="loc" title="trash"><div id="trashcan_anim" style="background-position:0 0"></div></a></li>
+      </ul>
+    </div>
+    <div id="content">
+      <!-- Programatically rendered -->  
+    </div>
+    <div id="poof" style="display:none"></div>
+    <div id="working" style="display:none" unselectable="on">
+      <img src="images/working.gif" class="loc" title="working"/>
+      <span class="loc">working</span>
+    </div>
+  </body>
+</html>

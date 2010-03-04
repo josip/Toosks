@@ -1,0 +1,22 @@
+<%
+  var skip_inbox = projects.length > 1;
+  for(var n = 0, m = projects.length; n < m; n++) {
+  var project = projects[n];
+
+  if(project.id === "inbox" && skip_inbox) continue;
+%>
+<li id="project_<%= project.id %>" class="project">
+  <a href="#Tasks/project/<%= project.id %>">
+    <% if(project.has_unfinished_tasks()) { %>
+    <span class="new"><%= project.unfinished_tasks().length %></span>
+    <% } %>
+    <% if(project.id === "inbox") { %>
+    <img src="images/icons/inbox.tiff"/>
+    <% } %>
+    <%= project.attr("title") %>
+  </a>
+</li>
+<% } %>
+<!--  else 
+<img src="< % = icon_for_project(project) % >" />
+ }  -->

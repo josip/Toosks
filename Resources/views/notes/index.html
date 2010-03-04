@@ -1,0 +1,16 @@
+<% if(with_create_form) { %>
+<ul class="notes">
+<% }
+ for(var n = 0, m = notes.length; n < m; n++) {
+  var note = notes[n];
+%>
+  <li id="note_<%= note.id %>" class="note">
+    <a href="#Tasks/delete_note/<%= note.id %>" class="action delete_note">-</a>
+    <p><%= body_formatter(note.attr("body")) %></p>
+  </li>
+<% } %>
+
+<% if(with_create_form) { %>
+<%= render_view("notes/create", {task_id: task.id})%>
+</ul>
+<% } %>

@@ -1,0 +1,83 @@
+body {
+  background: #fff;
+  color: #000;
+  font-size: 1.05em;
+  width: 500px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+h1 {
+  font-variant: small-caps;
+  border-bottom: 3px solid #ddd;
+  margin: 0;
+}
+
+h1 small {
+  color: #c0c0c0;
+  margin-left: 10px;
+  font-size: 0.5em;
+}
+
+.task {
+  padding: 5px 5px 5px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.task img {
+  display: block;
+  float: left;
+  margin: 5px 5px 0 0;
+}
+
+.task p {
+  display: block;
+  float: left;
+  margin: 0;
+  width: 455px;
+}
+
+.task.done {
+  text-decoration: line-through;
+  color: #c0c0c0;
+}
+
+.task .checkbox {
+  height: 15px;
+  width: 15px;
+  float: left;
+  margin: 5px 5px 0 0;
+  border: 1px solid #000;
+}
+
+#footer {
+  margin: 20px 20px 0 0;
+  font-size: 0.6em;
+  color: #585858;
+  text-align: right;
+  font-style: italic;
+}
+
+a.contact {
+  color: #036;
+  border: 1px solid #b3bfd9;
+}
+
+a.place {
+  color: #206600;
+  border: 1px solid #bed8b1;
+}
+
+span.date {
+  color: #3d0065;
+  border: 1px solid #c9b1d8;
+}
+
+a.external, a.contact, a.place, span.date {
+  text-decoration: none;
+  -webkit-border-radius: 4px;
+}
+
+.clear {
+  clear: both !important;
+}

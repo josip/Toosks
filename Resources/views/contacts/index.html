@@ -1,0 +1,20 @@
+<% var me = "@me".loc(); %>
+<div id="contacts" class="page">
+  <div class="sidebar">
+    <ul>
+      <li><a href="#Contacts/all"><img src="images/icons/address_book.tiff"/><%= "all contacts".loc() %></a></li>
+      <li><a href="#Contacts/create"><img src="images/icons/plus.png"/><%= "add contact".loc() %></a></li>
+      <li><a href="#" class="section"><%= "sel contacts".loc() %></a>
+        <ul id="sel_contacts_list">
+          <% for(var n = 0, m = faves.length; n < m; n++) { %>
+          <%= render_view("contacts/sidebar_contact", {contact: faves[n]}) %>
+          <% } %>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <%= render_view("contacts/sidebar", {contacts: contacts}) %>
+  <div id="contacts_body" class="body">
+    <!-- contacts/contact.html -->
+  </div>
+</div>

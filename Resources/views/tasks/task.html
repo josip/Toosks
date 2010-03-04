@@ -1,0 +1,27 @@
+<%
+for(var n = 0, m = tasks.length; n < m; n++) {
+  var task = tasks[n],
+      class_names = ["task", Otlet.util.class_for_priority(task.priority())];
+  if(task.attr("state") == Otlet.model.Task.TASK_INPROGRESS)
+    class_names.push("inprogress");
+  else if(task.attr("state") == Otlet.model.Task.TASK_DONE)
+    class_names.push("done");
+  
+%>
+<li class="<%= class_names.join(" ") %>" id="task_<%= task.id %>">
+  <ul class="actions">
+    <li><a href="#Tasks/notes/<%= task.id %>"><img src="images/task_notes.png"/></a></li>
+    <li class="handle">&harr;</li>
+  </ul>
+  <input type="checkbox" <% if(class_names.contains("done")) { %> checked="true" <% } %>/><p class="task_body"><%= body_formatter(task.attr("body")) %></p>
+</li>
+<% }
+if(!m) { %>
+<li class="info">
+  <%= "no tasks".loc() %><br/>
+  <%= "no tasks l2".loc() %>
+</li>
+<% } %>
+<!-- <script type="text/javascript">
+  $(".task ul.actions").disableSelection();
+</script> -->

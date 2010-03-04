@@ -1,0 +1,7 @@
+<div id="contacts_list" class="sidebar" style="display: none">
+  <ul>
+    <% for(var n = 0, m = contacts.length; n < m; n++) { %>
+    <%= render_view("contacts/sidebar_contact", {contact: contacts[n]}) %>
+    <% } %>
+  </ul>
+</div>

@@ -1,0 +1,24 @@
+<% var contact = place.contact(); %>
+<% if(contact) { %>
+<h2><img src="<%= contact.photo() %>" class="contact_photo"/><a href="#Contacts/show/<%= contact.id %>"><%= place.attr("title") %></a></h2>
+<% } else { %>
+<h2><%= place.attr("title") %></h2>
+<% } %>
+<h3>#<%= place.id %></h3>
+<p>
+  <%= place.attr("descrip") || "(no descrip)".loc().wrap("<em>", "</em>") %>
+</p>
+<div style="font-size: 0.8em">
+  <hr/>
+  <label><%= "lat".loc() %></label><span><%= place.attr("lat") %></span><br class="clear"/>
+  <label><%= "lng".loc() %></label><span><%= place.attr("lng") %></span><br class="clear"/>
+  <label><%= "link".loc() %></label><span>
+    <a href="<%= gmaps_link(place) %>" target="ti:systembrowser"><%= gmaps_link(place) %></a>
+  </span>
+</div>
+<hr/>
+<% var lat_lng = place.coords(); %>
+<img src="http://maps.google.com/staticmap?center=<%= lat_lng %>&amp;markers=<%= lat_lng %>,smallred&amp;zoom=13&amp;size=150x150&amp;sensor=false&amp;hl=hr" />
+<div>
+  <a href="#Places/del/<%= place.id %>"><%= "delete".loc() %></a>
+</div>

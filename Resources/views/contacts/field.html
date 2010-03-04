@@ -1,0 +1,14 @@
+<p class="field">
+  <% if(!is_property) { %>
+  <a href="#Contacts/remove_field/<%= field %>" class="action">
+    <img src="images/icons/minus.png" height="16"/>
+  </a>
+  <% } else { %>
+  <a href="#" class="action" style="width:16px;height:16px"></a>
+  <% } %>
+  <span class="field_name"><%= field %></span>
+  <span class="editable field_val" alt="<%= is_property ? field : "field_"+field %>">
+    <%= value %>
+  </span>
+  <br class="clear"/>
+</p>

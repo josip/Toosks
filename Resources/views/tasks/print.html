@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= project.attr("title") %></title>
+    <link rel="stylesheet" href="<%= resource("stylesheets/reset.css") %>" type="text/css" charset="utf-8"/>
+    <link rel="stylesheet" href="<%= resource("stylesheets/text.css") %>" type="text/css" charset="utf-8"/>
+    <link rel="stylesheet" href="<%= resource("stylesheets/print.css") %>" type="text/css" charset="utf-8"/>
+    <style type="text/css" media="screen">
+      .task.priority_low {
+        background: #fff url(<%= resource("images/priority_low.png") %>) 0 0 repeat-y;
+      }
+
+      .task.priority_medium {
+        background: #fff url(<%= resource("images/priority_medium.png") %>) 0 0 repeat-y;
+      }
+
+      .task.priority_high {
+        background: #fff url(<%= resource("images/priority_high.png") %>) 0 0 repeat-y;
+      }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        window.onload = function () { 
+          setTimeout(function () {
+            window.print();
+          }, 360);
+        };
+    </script>
+  </head>
+  <body>
+    <h1><%= project.attr("title") %></h1>
+    <%
+      for(var n = 0, m = tasks.length; n < m; n++) {
+        var task = tasks[n],
+          class_names = ["task", Otlet.util.class_for_priority(task.priority())];
+
+        if(task.attr("state") == Otlet.model.Task.TASK_INPROGRESS)
+          class_names.push("inprogress");
+        else if(task.attr("state") == Otlet.model.Task.TASK_DONE)
+          class_names.push("done");
+    %>
+    <div class="<%= class_names.join(" ") %>">
+      <div class="checkbox"></div>
+      <p><%= body_formatter(task.attr("body")) %></p>
+      <div class="clear"></div>
+    </div>
+    <% } %>
+    <div id="footer"><%= "created with toosks".loc() %></div>
+  </body>
+</html>
