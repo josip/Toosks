@@ -1,0 +1,13 @@
+h1. Toosks
+
+Toosks is a simple desktop application for time management.
+Toosks revolves around three main components: Tasks, People and Places.
+
+h2. Installation
+
+You can either download binary packages for your OS from "Downloads" section or clone this repository and
+import it into Titanium Developer as a new project and compile the binary for yourself.
+
+h2. Licence
+
+Toosks is published under "Creative Commons Attribution-Non-Commercial-Share Alike 3.0 Croatia":http://creativecommons.org/licenses/by-nc-sa/3.0/hr/deed.en_GB licence.
