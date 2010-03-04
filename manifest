@@ -1,0 +1,25 @@
+#appname:Toosks
+#appid:com.josip_lisec.toosks2
+#publisher:Josip Lisec
+#image:default_app_logo.png
+#url:http://twitter.com/liio
+#guid:1b65dfc5-3829-4bf5-a71e-affe97db6364
+#desc:Todo lists, contact and location managment on one place
+#type:desktop
+runtime:0.6.0
+api:0.6.0
+tiapp:0.6.0
+tifilesystem:0.6.0
+tiplatform:0.6.0
+tiui:0.6.0
+javascript:0.6.0
+tianalytics:0.6.0
+tidatabase:0.6.0
+tidesktop:0.6.0
+tigrowl:0.6.0
+timedia:0.6.0
+timonkey:0.6.0
+tinetwork:0.6.0
+tinotification:0.6.0
+tiprocess:0.6.0
+tiworker:0.6.0
